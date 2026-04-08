@@ -437,7 +437,7 @@
                     <div class="text-center">
                         <div class="mx-auto w-16 h-16 bg-[#00F0FF] text-[#002868] rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-[#00F0FF]/30">2</div>
                         <h4 class="font-semibold mb-2">Strategy Call</h4>
-                        <p class="text-sm text-gray-500">30-minute discovery and ROI projection.</p>
+                        <p class="text-sm text-gray-500">20-minute discovery and ROI projection.</p>
                     </div>
                     <div class="text-center">
                         <div class="mx-auto w-16 h-16 bg-[#35647E] text-white rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-[#35647E]/30">3</div>
@@ -610,18 +610,23 @@
 
                 <!-- Thank You + Calendly -->
                 <template x-if="currentStep === 6">
-                    <div class="text-center">
-                        <div class="text-6xl mb-6">🎉</div>
-                        <h3 class="text-3xl font-bold mb-4">You're all set!</h3>
-                        <p class="text-white/80 mb-8 text-lg">Your AI readiness report is on its way — check your inbox in the next few minutes.</p>
+                    <div x-init="$nextTick(() => Calendly.initInlineWidget({
+                            url: 'https://calendly.com/robwarren/colorado-ai-lab-strategy-call',
+                            parentElement: document.getElementById('cal-widget')
+                        }))">
+                        <div class="text-center mb-8">
+                            <div class="text-6xl mb-6">🎉</div>
+                            <h3 class="text-3xl font-bold mb-4">You're all set!</h3>
+                            <p class="text-white/80 text-lg">Your AI readiness report is on its way — check your inbox in the next few minutes.</p>
+                        </div>
 
                         <div class="bg-white/10 border border-white/20 rounded-2xl p-8 mb-8">
-                            <p class="font-semibold mb-4 text-lg">Ready to book your free 30-minute strategy call?</p>
-                            <div class="calendly-inline-widget" data-url="https://calendly.com/robwarren/colorado-ai-lab-strategy-call" style="min-width:320px;height:630px;"></div>
+                            <p class="font-semibold mb-4 text-lg text-center">Ready to book your free 20-minute strategy call?</p>
+                            <div id="cal-widget" style="min-width:320px;height:630px;"></div>
                         </div>
 
                         <button @click="currentStep=0; quizAnswers={}; lead={name:'',email:'',company:'',phone:''}"
-                                class="text-white/40 text-sm underline hover:text-white/70 transition-colors">
+                                class="block mx-auto text-white/40 text-sm underline hover:text-white/70 transition-colors">
                             Start over
                         </button>
                     </div>
