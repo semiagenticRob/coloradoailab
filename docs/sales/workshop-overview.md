@@ -93,7 +93,8 @@ Ideal industries: construction, hospitality, professional services, real estate,
 |--------|-------|
 | Half-day workshop (up to 15 people) | $2,500 |
 | Full-day workshop (up to 20 people) | $4,000 |
-| Monthly AI Partnership (add-on) | $3,500/month |
+| AI Readiness Sprint (3 weeks, 1 business) | $3,000 |
+| Monthly AI Partnership (add-on) | $3,500–$6,000/month |
 
 No per-seat fees. Flat rate for your team. Most businesses recoup the investment within 2–3 weeks if their team uses just one of the tools we build together.
 
